@@ -556,7 +556,7 @@ def getdefaultlocale(envvars=('LC_ALL', 'LC_CTYPE', 'LANG', 'LANGUAGE')):
 
     # fall back on POSIX behaviour
     import os
-    lookup = os.environ.get
+    lookup = get
     for variable in envvars:
         localename = lookup(variable,None)
         if localename:
