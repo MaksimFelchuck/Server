@@ -22,6 +22,7 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/Server/venv/Lib/site-packages/django/forms/templates" />
+        <option value="$MODULE_DIR$/Server/my_app/templates" />
       </list>
     </option>
   </component>
