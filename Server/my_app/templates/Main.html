@@ -1,6 +1,23 @@
 {% extends 'home.html' %}
 {% load static %}
 {% block content %}
-    <h1 class="title">Тут вы можете создавать свои скрипты.</h1>
-    <h1 class="title">Просто перейдите во вкладку "создать скрипт"</h1>
+
+
+
+
+
+<div class="list-group">
+    <a href="#" class="list-group-item disabled">
+    Тут перечисленны все существующие скрипты:
+    </a>
+    {% for i in dict %}
+        <a class="list-group-item title" href="#">{{ i }}</a>
+
+    {% endfor %}
+
+
+
+</div>
+
+
 {% endblock %}
