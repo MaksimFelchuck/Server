@@ -1,23 +1,29 @@
 {% extends 'home.html' %}
-{% load static %}
+
 {% block content %}
 
 
 
 
 
-<div class="list-group">
-    <a href="#" class="list-group-item disabled">
-    Тут перечисленны все существующие скрипты:
-    </a>
-    {% for i in dict %}
-        <a class="list-group-item title" href="#">{{ i }}</a>
-
-    {% endfor %}
+<div class="container title col-lg-12">
+        <div class="col-lg-12 title" >
+        {% for i in dict %}
+            <div class="col-lg-4">
+                <a class="list-group-item"  href="#">{{ i }}</a>
+            </div>
 
 
+        {% endfor %}
+
+        </div>
 
 </div>
+
+
+
+
+
 
 
 {% endblock %}

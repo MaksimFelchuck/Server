@@ -9,6 +9,7 @@
     <link rel="icon" href="http://www.emoji.co.uk/files/mozilla-emojis/smileys-people-mozilla/11326-slightly-smiling-face.png">
 
       <link rel="stylesheet" href={% static "style.css" %}>
+      <link rel="stylesheet" href={% static "font.css" %}>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -16,17 +17,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <title>Welcome!</title>
   </head>
-  <body background="http://wp.widewallpapers.ru/2k/minimalism/1366x768/minimalism-wallpaper-1366x768-003.jpg">
-
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <a href="/home" class="navbar-brand"> Домашняя страница</a>
-                <a href="/script" class="navbar-brand"> Создать скрипт</a>
-                <a href="/admin" class="navbar-brand navbar-right"> Зайти в админку</a>
+  <body>
 
 
-            </div>
-         </nav>
+
+
+    {% include 'nav.html' %}
+    {% include 'footer.html' %}
 
     {% block content %}
 
