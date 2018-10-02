@@ -19,8 +19,9 @@ from django.urls import path
 
 from my_app import views
 
+
 from my_app.views import Index
-from my_app.views import Script, Main
+from my_app.views import Script, Main, scriptid
 admin.autodiscover()
 
 urlpatterns = [
@@ -29,6 +30,7 @@ urlpatterns = [
     path('', Index, name='index'),
     path('script/', Script, name='script'),
     path('home/', Main, name='home'),
+    path('home/<path:script_id>', scriptid, name='script_id'),
 
 
 ]

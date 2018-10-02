@@ -6,14 +6,12 @@
 
 
 
-<div class="container title col-lg-12">
+        <div  class="container title col-lg-12">
         <div class="col-lg-12 title" >
-        {% for i in dict %}
+        {% for script in dict %}
             <div class="col-lg-4">
-                <a class="list-group-item"  href="#">{{ i }}</a>
+                <a class="list-group-item"  href={{ script }}>{{ script }}</a>
             </div>
-
-
         {% endfor %}
 
         </div>

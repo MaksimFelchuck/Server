@@ -5,7 +5,7 @@ from django.db import models
 
 class script(models.Model):
 
-    script_name = models.CharField('Название программы', max_length= 40, unique = True, db_index = True)
+    script_name = models.CharField('Название программы', max_length= 40, unique = True, db_index = True, primary_key = True)
     script = models.TextField('Текст программы')
 
     def __str__(self):

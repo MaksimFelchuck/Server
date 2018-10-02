@@ -1,5 +1,5 @@
 
-
+from django.views.generic.edit import UpdateView
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from .forms import *
@@ -18,26 +18,31 @@ def Main(request):
     return render(request, 'Main.html',context)
 
 def Index(request):
-    records = script.objects.all()
 
-    context = {
-        'dict': records
-    }
-    return render(request, 'home.html',context)
+    return render(request, 'home.html')
 
 
 
 def Script(request):
         form = ScriptForm(request.POST or  None)
         dict = {'form': form}
-        if request.method == 'POST' and form.is_valid():
-            data = form.cleaned_data
-            new_form = form.save()
-            print(data['script'])
+       # if request.method == 'POST' and form.is_valid():
+        #    data = form.cleaned_data
+         #   new_form = form.save()
+
 
 
 
         return render(request, 'form.html', dict)
 
+def scriptid(request, script_id):
+
+    index = script.objects.get(script_name = script_id)
+    text = index.script
 
 
+    context = {
+        'index': index,
+        'text': text
+    }
+    return render(request, 'script_id.html',context)
