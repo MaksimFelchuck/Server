@@ -1,0 +1,9 @@
+{% extends 'home.html' %}
+{% block content %}
+    <form action='' method="post">
+    {% csrf_token %}
+        <h3 class="">Вы уверенны, что ходите удалить {{ index }}?</h3>
+        <a href="/home" type="button" class="btn btn-sm btn-success">Назад</a>
+        <button type="submit" class="btn btn-sm btn-danger">Удалить</button>
+    </form>
+{% endblock %}

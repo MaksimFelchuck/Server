@@ -5,7 +5,8 @@
 
 
                 <div>
-                    <form  class="" action="" method="post"> {% csrf_token %}
+                    <form  class="" action="" method="get">
+                        {% csrf_token %}
                         <div class="form-group">
                             <label for="usr">Script name:</label>
                             <input type="text" class="form-control" value={{ index }} id="usr" name="script_name" disabled>
@@ -14,9 +15,9 @@
                             <label for="script">Script text:</label>
                             <textarea name="script" class="form-control" id="script" cols="150" rows="20" disabled="">{{ text }}</textarea>
                         </div>
-                {% comment %}    <div>
-                        <button type="submit" class="btn btn-sm btn-success">Сохранить</button>
-                    </div>{% endcomment %}
+                   <div>
+                        <a type="button" href='{{ index }}/delete'  class="btn btn-sm btn-danger">Удалить</a>
+                    </div>
                     </form>
 
                 </div>
