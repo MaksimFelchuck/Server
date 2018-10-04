@@ -10,11 +10,11 @@
                     <form  class="" action="" method="post"> {% csrf_token %}
 
                             <label for="script_name">Script name:</label>
-                            <input type="text" class="form-control " id='index' name="script_name">
+                            <input type="text" class="form-control " id='index' name="script_name" value = '{{ index }}' disabled>
 
 
                             <label for="script">Script text:</label>
-                            <textarea name="script" class="form-control" id="script" cols="150" rows="20">
+                            <textarea name="script" class="form-control" id="script" cols="150" rows="20" >{{ text }}
                             </textarea>
 
                     <div>

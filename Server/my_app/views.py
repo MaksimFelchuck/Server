@@ -26,33 +26,59 @@ def Index(request):
 
 
 def Script(request):
+    form = ScriptForm(request.POST or None)
+    dict = {'form': form}
+    if request.method == 'POST' and form.is_valid():
+        data = form.cleaned_data
+        new_form = form.save()
 
-    if request.method == 'POST':
-        index = script()
-        index.save()
+    return render(request, 'form.html', dict)
 
-        return render(request, 'form.html')
 
 def scriptid(request, script_id):
 
-    index = script.objects.get(script_name = script_id)
+    index = get_object_or_404(script, script_name = script_id)
     text = index.script
-
-
     context = {
         'index': index,
         'text': text
     }
-    return render(request, 'script_id.html',context)
+    if request.method == 'POST':
+        index.script = request.POST.get('script')
+        index.save()
+        return redirect(reverse('home'))
+
+    else:
+        return render(request, 'script_id.html',context)
 
 def Delete_script(request, script_id):
 
-    try:
-        if request.method == 'POST':
-            index = script(script_id)
+    if request.method == 'POST':
+        index = script.objects.get(script_name= script_id)
+        index.delete()
+        return redirect(reverse('home'))
 
-            index.delete()
+    else:
+        index = script.objects.get(script_name=script_id)
+        context = {
+            'index':index
+        }
+        return render(request, 'script_id_delete.html', context)
 
-            return redirect(Reverse('home'))
-    except():
-        return render(request, 'home.html')
+def Edit(request, script_id):
+
+    index = script.objects.get(script_name=script_id)
+    text = index.script
+    context = {
+        'index': index,
+        'text': text
+            }
+    if request.method == 'POST':
+
+        index.script = request.POST.get('script')
+        index.save()
+        return redirect(reverse('home'))
+
+    return render(request, 'form_edit.html', context)
+
+

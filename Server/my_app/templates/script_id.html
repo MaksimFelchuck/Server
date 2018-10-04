@@ -5,18 +5,19 @@
 
 
                 <div>
-                    <form  class="" action="" method="get">
+                    <form  class="" action="" method="post" >
                         {% csrf_token %}
-                        <div class="form-group">
+
                             <label for="usr">Script name:</label>
-                            <input type="text" class="form-control" value={{ index }} id="usr" name="script_name" disabled>
-                        </div>
-                        <div class="form-group">
+                            <input type="text" class="form-control" value='{{ index }}' id="usr" name="script_name" disabled>
+
+
                             <label for="script">Script text:</label>
-                            <textarea name="script" class="form-control" id="script" cols="150" rows="20" disabled="">{{ text }}</textarea>
-                        </div>
+                            <textarea name="script" class="form-control" id="script" cols="150" rows="20" disabled>{{ text }} </textarea>
+
                    <div>
-                        <a type="button" href='{{ index }}/delete'  class="btn btn-sm btn-danger">Удалить</a>
+                        <a type="submit" href='{{ index }}/delete'  class="btn btn-sm btn-danger">Удалить</a>
+                        <a type="submit" class="btn btn-sm btn-success" href="edit/{{ index }}">Редактировать</a>
                     </div>
                     </form>
 
