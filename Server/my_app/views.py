@@ -14,9 +14,12 @@ from django.views.generic.base import View
 def Main(request):
     records = script.objects.all()
 
+
     context = {
         'dict': records
     }
+    for i in records:
+        print(i.script)
     return render(request, 'Main.html',context)
 
 def Index(request):

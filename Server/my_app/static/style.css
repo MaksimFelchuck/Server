@@ -5,3 +5,34 @@
     margin-top: 10px;
 ;
 }
+.body {
+    color: #dddddd;
+    width: 112px;
+    height: 134px;
+    text-align: center;
+
+    background: url('black.png') no-repeat fixed center;;
+}
+.back {
+    color: #dddddd;
+    width: 1366px;
+    height: 768px;
+    text-align: center;
+
+    background-size: cover;
+    height: 100%;
+    background: url('back.jpg') no-repeat fixed center;;
+}
+.form_line{
+    margin-left: 300px;
+    margin-top: 40px
+;
+}
+.list_line{
+    margin-left: 230px;
+    margin-top: 20px
+;
+}
+.modal_color{
+    color: #1d2124;
+}

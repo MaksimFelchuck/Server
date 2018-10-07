@@ -1,29 +1,29 @@
 {% extends 'home.html' %}
 {% block content %}
-    <div class="container" >
+
+
+        <div class="container form_line" >
         <div class="row">
+            <div class="col-lg-8">
+    <form method="get">
+    {% csrf_token %}
+        <div class="form-group ">
+            <label for=script_name">Script name</label>
+            <input type="text" class="form-control" id="index" placeholder="Script_name1" name="script_name" value="{{ index }}" disabled>
+        </div>
 
 
-                <div>
-                    <form  class="" action="" method="post" >
-                        {% csrf_token %}
-
-                            <label for="usr">Script name:</label>
-                            <input type="text" class="form-control" value='{{ index }}' id="usr" name="script_name" disabled>
-
-
-                            <label for="script">Script text:</label>
-                            <textarea name="script" class="form-control" id="script" cols="150" rows="20" disabled>{{ text }} </textarea>
-
-                   <div>
-                        <a type="submit" href='{{ index }}/delete'  class="btn btn-sm btn-danger">Удалить</a>
-                        <a type="submit" class="btn btn-sm btn-success" href="edit/{{ index }}">Редактировать</a>
+        <div class="form-group">
+            <label for="script">Script</label>
+            <textarea class="form-control" id="script" rows="10" name="script" disabled>{{ text }}</textarea>
+        </div>
+         <div>
+                        <a type="submit" class="btn btn-primary" href="edit/{{ index }}">Edit</a>
                     </div>
-                    </form>
 
-                </div>
-
-
+    </form>
+            </div>
         </div>
     </div>
+
 {% endblock %}
