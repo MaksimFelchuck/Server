@@ -18,8 +18,7 @@ def Main(request):
     context = {
         'dict': records
     }
-    for i in records:
-        print(i.script)
+
     return render(request, 'Main.html',context)
 
 def Index(request):
@@ -56,17 +55,12 @@ def scriptid(request, script_id):
 
 def Delete_script(request, script_id):
 
-    if request.method == 'POST':
+    if request.method == 'GET':
         index = script.objects.get(script_name= script_id)
         index.delete()
         return redirect(reverse('home'))
 
-    else:
-        index = script.objects.get(script_name=script_id)
-        context = {
-            'index':index
-        }
-        return render(request, 'script_id_delete.html', context)
+
 
 def Edit(request, script_id):
 
