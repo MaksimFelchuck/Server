@@ -3,25 +3,29 @@
 {% block content %}
 
 {% comment %}{% include 'modal.html' %}{% endcomment %}
+<div class="container text-center" style="margin-top: 20px;">
+     <div class="list-group col-lg-8 list_line">
+            {% for script in dict %}
+          <li  class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{ script.script_name }}</h5>
+                <samp>{{ script.create_date }}</samp>
 
-<div class="list-group col-lg-8 list_line">
-    {% for script in dict %}
-  <li  class="list-group-item list-group-item-action flex-column align-items-start">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{{ script.script_name }}</h5>
+                  <div class="btn-group btn-group-sm" role="group">
 
-          <div class="btn-group btn-group-sm" role="group">
-              <a href="edit/{{ script.script_name }}" type='' class="btn btn-primary" >Edit</a>
+                      <a href="edit/{{ script.script_name }}" type='' class="btn btn-primary" >Edit</a>
 
-              <button type="submit" id="script" class="btn btn-danger open-modal" name="remove"  value="{{ script }}" onclick="ViewModal(this)">Delete</button>
+                      <button type="submit" id="script" class="btn btn-danger open-modal" name="remove"  value="{{ script }}" onclick="ViewModal(this)">Delete</button>
 
+                    </div>
             </div>
-    </div>
-    <p class="mb-1">{{ script.script }}</p>
-  </li>
-{% endfor %}
+            <p class="mb-1">{{ script.script }}</p>
+          </li>
+        {% endfor %}
 
+     </div>
 </div>
+
 
 <div class="modal fade modal_color" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

@@ -14,25 +14,26 @@
     background: url('black.png') no-repeat fixed center;;
 }
 .back {
-    color: #dddddd;
-    width: 1366px;
-    height: 768px;
-    text-align: center;
-
-    background-size: cover;
     height: 100%;
-    background: url('back.jpg') no-repeat fixed center;;
+    width: 100%;
+    background: url('back.jpg')  no-repeat;;;
+    background-size: cover;
 }
-.form_line{
-    margin-left: 300px;
-    margin-top: 40px
-;
+.form_line {
+    background-color: #1b1e21;
+
+}
+.form_line label{
+    color: white;
+}
+
+.form_line textarea{
+    resize: none;
 }
 .list_line{
-    margin-left: 230px;
-    margin-top: 20px
-;
+    display: inline-flex;
 }
-.modal_color{
+
+.modal_color {
     color: #1d2124;
 }

@@ -10,7 +10,7 @@ from .models import script
 # Create your views here.
 from django.views.generic.base import View
 
-
+import datetime
 def Main(request):
     records = script.objects.all()
 
@@ -29,7 +29,8 @@ def Index(request):
 
 def Script(request):
     form = ScriptForm(request.POST or None)
-    dict = {'form': form}
+    dict = {'form': form,
+            'date': str(datetime.datetime.now())[:10]}
     if request.method == 'POST' and form.is_valid():
         data = form.cleaned_data
         new_form = form.save()
@@ -68,7 +69,8 @@ def Edit(request, script_id):
     text = index.script
     context = {
         'index': index,
-        'text': text
+        'text': text,
+        'date': str(datetime.datetime.now())[:10]
             }
     if request.method == 'POST':
 
