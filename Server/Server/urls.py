@@ -20,17 +20,15 @@ from django.urls import path
 from my_app import views
 
 
-from my_app.views import Index
-from my_app.views import Script, Main, scriptid, Delete_script,Edit
+
+from my_app.views import *
 admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     path('', Index, name='index'),
     path('script/', Script, name='script'),
     path('home/', Main, name='home'),
-    path('home/<str:script_id>', scriptid, name='script_id'),
     path('home/<str:script_id>/delete', Delete_script, name='Delete_script'),
     path('home/edit/<str:script_id>', Edit, name='edit'),
 

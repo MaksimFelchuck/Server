@@ -38,21 +38,7 @@ def Script(request):
     return render(request, 'form.html', dict)
 
 
-def scriptid(request, script_id):
 
-    index = get_object_or_404(script, script_name = script_id)
-    text = index.script
-    context = {
-        'index': index,
-        'text': text
-    }
-    if request.method == 'POST':
-        index.script = request.POST.get('script')
-        index.save()
-        return redirect(reverse('home'))
-
-    else:
-        return render(request, 'script_id.html',context)
 
 def Delete_script(request, script_id):
 
